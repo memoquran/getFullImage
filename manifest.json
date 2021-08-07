@@ -1,18 +1,13 @@
 [
   {
     "kind": "column",
-    "name": "Find Image",
-    "description": "Lookup the right image",
+    "name": "Find Page",
+    "description": "Lookup the right page",
     "author": "glide.apps.elbazi@gmail.com>",
     "params": [
       {
-        "name": "ayatID",
-        "displayName": "AyatID",
-        "type": "number"
-      },
-      {
-        "name": "level",
-        "displayName": "Level",
+        "name": "page",
+        "displayName": "Page",
         "type": "number"
       },
       {
