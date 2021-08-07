@@ -6240,14 +6240,13 @@ var salary = [
 [6235,604,114,5,6222,1,15,14,6235,6235,6234,6236,6232,6236,6229,6236,6222,6236],
 [6236,604,114,6,6222,1,15,15,6236,6236,6234,6236,6232,6236,6229,6236,6222,6236],
 ];
-window.function = function (ayatID, level, reading) {
+window.function = function (page, reading) {
   // For each parameter, its `.value` contains
   // either its value in the type you've declared,
   // or it's `undefined`.  This is a good place to
   // extract the `.value`s and assign default
   // values.
-  ayatID = ayatID.value ?? 1;
-  level = level.value ?? 1;
+  page = page.value ?? 1;
   reading = reading.value ?? "Hafs";
 
   // Your function should return the exact type
@@ -6258,39 +6257,18 @@ window.function = function (ayatID, level, reading) {
   //return str.substring(start, end);
   var img_link="https://beinsync.be/memoquran/"+reading+"/Images/verses/";
   if(reading == "Hafs"){
-    if(level==1 || level==0){
-        img_link=img_link+salary[ayatID][2]+"_"+salary[ayatID][3]+"_"+salary[ayatID][3]+".jpg";
-    }
-    if(level==2){
-        var from=salary[salary[ayatID][10]][3];
-        var to=salary[salary[ayatID][11]][3];
-        img_link=img_link+salary[ayatID][2]+"_"+from+"_"+to+".jpg";
-    }
-    if(level==3){
-        var from=salary[salary[ayatID][12]][3];
-        var to=salary[salary[ayatID][13]][3];
-        img_link=img_link+salary[ayatID][2]+"_"+from+"_"+to+".jpg";
-    }
-    if(level==4){
-        var from=salary[salary[ayatID][14]][3];
-        var to=salary[salary[ayatID][15]][3];
-        img_link=img_link+salary[ayatID][2]+"_"+from+"_"+to+".jpg";
-    }
-    if(level==5){
         var from=salary[salary[ayatID][16]][3];
         var to=salary[salary[ayatID][17]][3];
         img_link=img_link+salary[ayatID][2]+"_"+from+"_"+to+".jpg";
-    }
   }
   else{
-    var page= salary[ayatID][1];
     if(page<10)
-      img_link=img_link+"00"+salary[ayatID][1]+".jpg";
+      img_link=img_link+"00"+page+".jpg";
     else{
       if(page<100)
-        img_link=img_link+"0"+salary[ayatID][1]+".jpg";
+        img_link=img_link+"0"+page+".jpg";
       else
-        img_link=img_link+salary[ayatID][1]+".jpg";       
+        img_link=img_link+spage+".jpg";       
     }
   }
   return img_link;
